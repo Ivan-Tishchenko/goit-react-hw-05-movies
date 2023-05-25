@@ -1,16 +1,29 @@
+import React from 'react';
+import { Routes, NavLink, Route } from 'react-router-dom';
+import styled from 'styled-components';
+
+const StyledLink = styled(NavLink)`
+  color: black;
+
+  &.active {
+    color: orange;
+  }
+`;
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <>
+      <header>
+        <nav>
+          <StyledLink to="/" end>
+            home
+          </StyledLink>
+          <StyledLink to="/movies">movies</StyledLink>
+        </nav>
+      </header>
+      <Routes>
+        <Route path="/" element={<div>home</div>} />
+      </Routes>
+    </>
   );
 };
