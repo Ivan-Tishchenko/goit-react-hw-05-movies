@@ -1,0 +1,24 @@
+.filmInformation {
+  display: flex;
+  border: 1px solid black;
+}
+
+.image {
+  background-color: aqua;
+  width: 500px;
+  height: 500px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  font-weight: 600;
+}
+
+.img {
+  margin-right: 10px;
+}
+
+.moreInformation {
+  border: 1px solid black;
+}

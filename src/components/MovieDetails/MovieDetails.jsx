@@ -1,6 +1,7 @@
 import { Link, useParams, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { fetchOnId } from 'functionsAPI';
+import css from './MovieDetails.module.css';
 
 const MovieDetails = props => {
   const { movieId } = useParams();
@@ -19,18 +20,24 @@ const MovieDetails = props => {
   return (
     <section>
       {location.state ? (
-        <Link to={location.state.from}>back</Link>
+        <Link className={css.back} to={location.state.from}>
+          back
+        </Link>
       ) : (
-        <Link to="/goit-react-hw-05-movies">home</Link>
+        <Link className={css.back} to="/goit-react-hw-05-movies">
+          home
+        </Link>
       )}
-      <div>
+      <div className={css.filmInformation}>
         {filmData.backdrop_path ? (
           <img
+            className={css.img}
             src={`https://image.tmdb.org/t/p/w400${filmData.backdrop_path}`}
             alt={filmData.name}
+            height="100%"
           />
         ) : (
-          <div width="400px" height="400px">
+          <div className={css.image} width="400px" height="400px">
             not found image
           </div>
         )}
@@ -45,7 +52,7 @@ const MovieDetails = props => {
           ))}
         </div>
       </div>
-      <div>
+      <div className={css.moreInformation}>
         <p>Additional infornstion</p>
         <ul>
           <li>

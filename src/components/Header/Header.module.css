@@ -1,0 +1,19 @@
+.header {
+  width: 100%;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 30px;
+}
+
+.navigation {
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navLink {
+  font-size: large;
+  text-decoration: none;
+}
