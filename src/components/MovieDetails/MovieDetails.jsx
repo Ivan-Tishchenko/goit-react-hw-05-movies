@@ -1,10 +1,11 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { fetchOnId } from 'functionsAPI';
 
 const MovieDetails = props => {
   const { movieId } = useParams();
   const [filmData, setFilmData] = useState({});
+  const location = useLocation();
 
   useEffect(() => {
     fetchOnId(movieId)
@@ -17,6 +18,11 @@ const MovieDetails = props => {
 
   return (
     <section>
+      {location.state ? (
+        <Link to={location.state.from}>back</Link>
+      ) : (
+        <Link to="/goit-react-hw-05-movies">home</Link>
+      )}
       <div>
         {filmData.backdrop_path ? (
           <img

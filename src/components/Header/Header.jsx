@@ -13,7 +13,7 @@ const Header = props => {
   return (
     <header>
       <nav>
-        <StyledLink to="/" end>
+        <StyledLink to="/goit-react-hw-05-movies" end>
           home
         </StyledLink>
         <StyledLink to="/movies">movies</StyledLink>

@@ -24,7 +24,7 @@ export const topOfDay = async () => {
   return answear;
 };
 
-export const fetchOnName = async (name, page) => {
+export const fetchOnName = async (name, page = 1) => {
   const answear = await fetch(
     `https://api.themoviedb.org/3/search/movie?query=${name
       .split(' ')

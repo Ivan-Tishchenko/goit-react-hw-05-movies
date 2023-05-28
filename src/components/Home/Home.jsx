@@ -1,9 +1,10 @@
 import { topOfDay } from 'functionsAPI';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Home = props => {
   const [topFilms, setTopFilms] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     topOfDay()
@@ -17,7 +18,10 @@ const Home = props => {
       <ul>
         {topFilms.map(obj => (
           <li key={obj.id}>
-            <Link to={`/movies/${obj.id}`}>
+            <Link
+              to={`/movies/${obj.id}`}
+              state={{ from: `${location.pathname}${location.search}` }}
+            >
               <p>{obj.original_title ?? obj.original_name}</p>
             </Link>
           </li>
